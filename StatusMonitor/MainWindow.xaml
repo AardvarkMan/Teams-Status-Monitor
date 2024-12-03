@@ -1,0 +1,40 @@
+﻿<Window x:Class="StatusMonitor.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:StatusMonitor"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="430" Width="800">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="35"/>
+        </Grid.RowDefinitions>
+        <Menu>
+            <MenuItem Header="_System">
+                <MenuItem x:Name="mnuSettings" Header="Settings" Click="mnuSettings_Click"/>
+                <MenuItem x:Name="mnuUserSelect" Header="User Selection" Click="mnuUserSelect_Click"/>
+                <MenuItem x:Name="mnuExit" Header="Exit" Click="mnuExit_Click"/>
+            </MenuItem>
+        </Menu>
+        <Grid x:Name="DisplayGrid" Grid.Row="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="45"/>
+                <RowDefinition Height="35*"/>
+            </Grid.RowDefinitions>
+            <Button Grid.Row="0" x:Name="btnStart" Content="Start" Click="BtnStart_Click"/>
+            <ScrollViewer Grid.Row="1">
+                <StackPanel x:Name="spUsers"/>
+            </ScrollViewer>
+        </Grid>
+        <StatusBar Grid.Row="2">
+            <StatusBarItem>
+                <Label x:Name="txtStatus" Content="Status"/>
+            </StatusBarItem>
+        </StatusBar>
+    </Grid>
+
+</Window>
